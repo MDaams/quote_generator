@@ -20,7 +20,11 @@ class NewMainPageVisitorTest(unittest.TestCase):
         # Page title says 'Quote Generator'
         self.assertIn('Quote Generator', self.browser.title)
         # A random quote is displayed.
-        quote_div = driver.find_element_by_id('quote-div')
+        quote_div = self.browser.find_element_by_id('quote-div')
+        first_quote = quote_div.get_attribute("innerHTML")
+
+        self.assertTrue(len(first_quote) > 1, "No quote found in text")
+
         #the user refreshes the mainpage. A new random quote is displayed.
         self.fail('finish test')
 
