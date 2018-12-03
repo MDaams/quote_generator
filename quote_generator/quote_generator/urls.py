@@ -1,6 +1,5 @@
-from django.urls import include, path
-from mainpage.views import main_page
+from django.conf.urls import url, include
 
 urlpatterns = [
-    path(r'^$', main_page(), name='main')
+    url(r'^', include('mainpage.urls'))
 ]
