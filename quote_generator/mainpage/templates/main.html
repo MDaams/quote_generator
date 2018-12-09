@@ -4,7 +4,9 @@
     </head>
     <body>
         <div id="quote-div">
-            {{quote}}
+            {% autoescape off %}
+                {{quote}}
+            {% endautoescape %}
         </div>
     </body>
     

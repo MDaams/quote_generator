@@ -22,13 +22,13 @@ class NewMainPageVisitorTest(LiveServerTestCase):
         first_quote = self.browser.find_element_by_id('quote-div').text
 
         self.assertNotEqual(first_quote, '')
-        self.assertNotIn('<p>', first_quote)
 
         #the user refreshes the mainpage. A new random quote is displayed.
         self.browser.refresh()
         second_quote = self.browser.find_element_by_id('quote-div').text
         self.assertNotEqual(second_quote, '')
         self.assertNotEqual(second_quote, first_quote, 'Expected a new quote!')
+        
         self.fail('finish test')
 
 if __name__ == '__main__':  
