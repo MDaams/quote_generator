@@ -29,5 +29,7 @@ class NewMainPageVisitorTest(LiveServerTestCase):
         self.browser.refresh()
 
         second_quote = self.browser.find_element_by_id('quote-div').text
+        second_author = self.browser.find_element_by_id('quote-author').text
         self.assertNotEqual(second_quote, '', 'No quote found!')
         self.assertNotEqual(second_quote, first_quote, 'Expected a new quote!')
+        self.assertNotEqual(second_author, '', 'No author found!')
