@@ -23,7 +23,7 @@ class NewMainPageVisitorTest(StaticLiveServerTestCase):
         first_author = self.browser.find_element_by_id('quote-author').text
 
         self.assertNotEqual(first_quote, '', 'No quote found!')
-        self.assertNotEqual(first_author.strip(), '-', 'No author found!')
+        self.assertNotEqual(first_author.strip(), '', 'No author found!')
 
         #the user refreshes the mainpage. A new random quote is displayed.
         self.browser.refresh()
@@ -32,4 +32,4 @@ class NewMainPageVisitorTest(StaticLiveServerTestCase):
 
         self.assertNotEqual(second_quote, '', 'No quote found!')
         self.assertNotEqual(second_quote, first_quote, 'Expected a new quote!')
-        self.assertNotEqual(second_author.strip(), '-', 'No author found!')
+        self.assertNotEqual(second_author.strip(), '', 'No author found!')
