@@ -1,9 +1,8 @@
 #https://sites.google.com/a/chromium.org/chromedriver/home
 
 from selenium import webdriver
-import unittest
-
-class NewMainPageVisitorTest(unittest.TestCase):
+from django.test import LiveServerTestCase
+class NewMainPageVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome('../../util/chromedriver.exe')
@@ -14,16 +13,15 @@ class NewMainPageVisitorTest(unittest.TestCase):
 
         
     def test_random_quote_is_shown(self):
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
         
         #user visits the mainpage for the first time. 
         # Page title says 'Quote Generator'
         self.assertIn('Quote Generator', self.browser.title)
         # A random quote is displayed.
-        quote_div = self.browser.find_element_by_id('quote-div')
-        first_quote = quote_div.get_attribute("innerHTML")
+        first_quote = self.browser.find_element_by_id('quote-div').text       
 
-        self.assertTrue(len(first_quote) > 1, "No quote found in text")
+        self.assertNotEqual(first_quote, '')
 
         #the user refreshes the mainpage. A new random quote is displayed.
         self.fail('finish test')
