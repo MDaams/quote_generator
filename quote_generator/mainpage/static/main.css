@@ -1,0 +1,17 @@
+.background{
+    background-image: url("./sky-back.jpg");
+}
+
+#quote-div {
+    margin: auto;
+    margin-top: 17%;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: white;
+  }
+
+#quote-author {
+    font-weight: bold;
+}
