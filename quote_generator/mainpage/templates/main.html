@@ -5,9 +5,11 @@
     </head>
     <body>
         <div id="quote-div">
+            <div id="quote-text">
             {% autoescape off %}
                 {{quote}}
-            {% endautoescape %}            
+            {% endautoescape %}
+            </div>
             <p id="quote-author">- {{author}}</p>
         </div>
     </body>

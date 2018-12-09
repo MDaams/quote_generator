@@ -19,7 +19,7 @@ class NewMainPageVisitorTest(StaticLiveServerTestCase):
         # Page title says 'Quote Generator'
         self.assertIn('Quote Generator', self.browser.title)
         # A random quote is displayed.
-        first_quote = self.browser.find_element_by_id('quote-div').text
+        first_quote = self.browser.find_element_by_id('quote-text').text
         first_author = self.browser.find_element_by_id('quote-author').text
 
         self.assertNotEqual(first_quote, '', 'No quote found!')
@@ -27,7 +27,7 @@ class NewMainPageVisitorTest(StaticLiveServerTestCase):
 
         #the user refreshes the mainpage. A new random quote is displayed.
         self.browser.refresh()
-        second_quote = self.browser.find_element_by_id('quote-div').text
+        second_quote = self.browser.find_element_by_id('quote-text').text
         second_author = self.browser.find_element_by_id('quote-author').text
 
         self.assertNotEqual(second_quote, '', 'No quote found!')
