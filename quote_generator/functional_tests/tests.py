@@ -4,7 +4,9 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 class NewMainPageVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
+        #chromedriver.exe location
         self.chromeDriverPath = '../util/chromedriver.exe'
+        
         self.browser = webdriver.Chrome(self.chromeDriverPath)
         self.browser.implicitly_wait(3)
     
