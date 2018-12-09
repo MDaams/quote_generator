@@ -5,7 +5,7 @@ from django.test import LiveServerTestCase
 class NewMainPageVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome('../../util/chromedriver.exe')
+        self.browser = webdriver.Chrome('../util/chromedriver.exe')
         self.browser.implicitly_wait(3)
     
     def tearDown(self):
