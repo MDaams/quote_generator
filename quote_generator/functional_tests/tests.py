@@ -1,11 +1,11 @@
-#https://sites.google.com/a/chromium.org/chromedriver/home
-
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+
 class NewMainPageVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome('../util/chromedriver.exe')
+        self.chromeDriverPath = '../util/chromedriver.exe'
+        self.browser = webdriver.Chrome(self.chromeDriverPath)
         self.browser.implicitly_wait(3)
     
     def tearDown(self):
